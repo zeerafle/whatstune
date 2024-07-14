@@ -161,3 +161,4 @@ cython_debug/
 #.idea/
 
 /.temp_images/
+/current_obsession.txt

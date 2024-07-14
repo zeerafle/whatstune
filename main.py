@@ -20,6 +20,22 @@ user = network.get_user(USERNAME)
 print('Getting top track of the week...')
 top_track = user.get_top_tracks(period=pylast.PERIOD_7DAYS, limit=1)[0]
 track_title = top_track.item.title
+
+print('Checking if the current obsession is the same as the last one...')
+try:
+    with open('current_obsession.txt', 'r') as f:
+        last_track_title = f.read()
+        if last_track_title == track_title:
+            print('Current obsession is the same as the last one. Exiting...')
+            exit(0)
+except FileNotFoundError:
+    pass
+
+print('Save current obsession data')
+with open('current_obsession.txt', 'w') as f:
+    f.write(track_title)
+
+print('Getting track details...')
 artist_name = top_track.item.artist.name
 album = top_track.item.get_album()
 album_name = album.get_title()

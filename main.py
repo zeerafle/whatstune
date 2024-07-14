@@ -43,7 +43,7 @@ print('Updating Whatsapp status')
 payload = {
     "media": album_cover_url,
     "contacts": ['62895704806187'],
-    "caption": "Currently obsessed with " + track_title + " by " + artist_name + " from the album " + album_name,
+    "caption": f"Currently obsessed with {track_title}\n{artist_name} - {album_name}",
     "width": 770,
     "height": 770
 }

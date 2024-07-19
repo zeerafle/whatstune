@@ -1,0 +1,19 @@
+environment:
+   LAST_FM_API_ROOT: "${LAST_FM_API_ROOT}"
+   LAST_FM_API_KEY: "${LAST_FM_API_KEY}"
+   LAST_FM_API_SECRET: "${LAST_FM_API_SECRET}"
+   WHAPI_API_URL: "${WHAPI_API_URL}"
+   WHAPI_TOKEN: "${WHAPI_TOKEN}"
+packages:
+    - name: whatstune
+      shared: false
+      functions:
+        - name: storyupdate
+          triggers:
+            - name: weekly
+              sourceType: scheduler
+              sourceDetails:
+                cron: "0 0 * * 0"
+          binary: false
+          runtime: python:default
+          web: false

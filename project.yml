@@ -15,5 +15,5 @@ packages:
               sourceDetails:
                 cron: "0 0 * * 0"
           binary: false
-          runtime: python:default
+          runtime: python:3.11
           web: false

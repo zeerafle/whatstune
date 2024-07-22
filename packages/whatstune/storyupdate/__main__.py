@@ -1,13 +1,13 @@
-import datetime
-
 from file_utils import read_current_obsession, write_current_obsession
 from lastfm_utils import get_top_track, get_track_details
 from whatsapp_utils import update_whatsapp_status
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 def main(args):
-    print('Python timer trigger function ran at %s', datetime.datetime.utcnow)
-
     top_track = get_top_track('zeerafle')
     track_title = top_track.item.title
 

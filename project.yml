@@ -16,4 +16,6 @@ packages:
                 cron: "0 0 * * 0"
           binary: false
           runtime: python:3.11
+          limits:
+            timeout: 10000
           web: false
